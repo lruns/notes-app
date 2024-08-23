@@ -7,7 +7,7 @@ export const useStore = () => {
     const context = useContext(AppStoreContext);
     if (context === null) {
         throw new Error(
-            "You have forgotten to wrap your root component with RootStoreProvider"
+            "You have forgotten to wrap your root component with AppStoreContext.Provider"
         );
     }
     return context;
