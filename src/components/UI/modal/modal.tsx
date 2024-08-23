@@ -2,19 +2,19 @@ import styles from './modal.module.css'
 
 export type ModalProps = {
     children: HTMLElement,
-    active: boolean
-    setModalVisible: (visible: boolean) => void
+    modalVisible: boolean
+    hideModal: () => void
 };
 
 const Modal = (props: ModalProps) => {
-    if (!props.active) {
+    if (!props.modalVisible) {
         return null;
     }
     return (
         <div className={styles.modalContainer}>
             <div className={styles.modalContent}>
                 <button className={styles.closeButton} aria-label="Close"
-                        onClick={() => props.setModalVisible(false)}>×
+                        onClick={() => props.hideModal()}>×
                 </button>
                 {props.children}
             </div>

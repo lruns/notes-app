@@ -9,6 +9,15 @@
     max-width: 300px;
     min-height: 200px;
     padding: 0.4em 0.8em;
+    overflow-wrap: break-word;
+}
+
+.noteWrapper > p {
+    white-space: wrap;
+    overflow: scroll;
+    text-overflow: ellipsis;
+    height: 100px;
+    overflow-wrap: break-word;
 }
 
 .addNewNote {
@@ -20,6 +29,10 @@
     font-weight: bold;
 
     min-height: 200px;
+}
+
+.editNote {
+
 }
 
 @media (max-width: 1200px) {
@@ -40,6 +53,6 @@
     }
 
     .noteWrapper {
-        max-width: none;
+        max-width: 90vw;
     }
 }

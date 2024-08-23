@@ -6,7 +6,7 @@ export type Note = {
     content: string;
 }
 
-class NoteStore {
+export default class NoteStore {
     notes: Note[] = [
         {
             id: "1",
@@ -39,7 +39,7 @@ class NoteStore {
         makeAutoObservable(this)
     }
 
-    addNote(title: string, content: string): void {
+    addNote = (title: string, content: string): void => {
         const newNote: Note = {
             id: Math.random().toString(36).substring(2, 9),
             title,
@@ -48,9 +48,15 @@ class NoteStore {
         this.notes.push(newNote);
     }
 
-    removeNote(id: string): void {
+    updateNote = (newNote: Note): void => {
+        const index = this.notes.findIndex(note => newNote.id === note.id);
+        if (index !== -1) {
+            this.notes.splice(index, 1, newNote);
+        }
+    }
+
+    removeNote = (id: string): void => {
         this.notes = this.notes.filter(note => note.id!== id);
     }
 }
 
-export default new NoteStore();

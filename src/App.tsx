@@ -1,23 +1,19 @@
 import NoteContainer from "./components/note_container/note_container.tsx";
 import "./App.css"
-import NoteForm from "./components/note_form/note_form.tsx";
-import Modal from "./components/UI/modal/modal.tsx";
-import {useState} from "react";
+import NoteEditor from "./components/note_editor/note_editor.tsx";
+import AppStore from "./store/app_store.ts";
+import {AppStoreContext} from "./store/app_store_context.ts";
 
-function App() {
-    const [modalVisibility, setModalVisible] = useState(false);
-
+const App = () => {
     return (
-        <>
+        <AppStoreContext.Provider value={new AppStore()}>
             <h1 className={"app-title"}>Note app</h1>
-            <Modal active={modalVisibility} setModalVisible={setModalVisible}>
-                <NoteForm/>
-            </Modal>
             <div className={"note-container-wrapper"}>
-                <NoteContainer openModal={() => setModalVisible(true)}/>
+                <NoteContainer/>
             </div>
-        </>
+            <NoteEditor/>
+        </AppStoreContext.Provider>
     )
-}
+};
 
 export default App
