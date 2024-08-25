@@ -32,4 +32,5 @@
 
 .closeButton:hover {
     color: #3384ff;
+    background: transparent;
 }

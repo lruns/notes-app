@@ -31,8 +31,9 @@
     min-height: 200px;
 }
 
-.editNote {
-
+.buttonContainer{
+    display: flex;
+    justify-content: flex-end;
 }
 
 @media (max-width: 1200px) {

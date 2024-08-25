@@ -4,6 +4,20 @@ html {
     font-family: "Roboto", sans-serif;
 }
 
+button {
+    background: #1a81e8;
+    color: white;
+    padding: 7px;
+    margin: 3px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1263c3;
+}
+
 @media (max-width: 768px) {
     html {
         font-size: 14px;
