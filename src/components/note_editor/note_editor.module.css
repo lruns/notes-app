@@ -16,7 +16,7 @@ input {
     border-bottom: 1px solid #000000;
 }
 
-textarea {
+.textEditor {
     border: 1px solid rgba(255,255,255,0);
     border-radius: 5px;
     background: rgba(149, 149, 149, 0.09);
@@ -24,7 +24,7 @@ textarea {
     min-height: 200px;
 }
 
-input:focus, textarea:focus {
+input:focus, .textEditor:focus {
     outline: none;
     border-color: #1a81e8;
 }
